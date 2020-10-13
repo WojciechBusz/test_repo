@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('STAGE 1') {
             steps {
-                sh 'mkdir xxx'
+                sh 'echo "xxx"'
             }
         }
     }
