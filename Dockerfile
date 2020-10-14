@@ -10,4 +10,4 @@ RUN apt-get update \
 ENV JAVA_HOME /opt/
 
 #copy files over from the original environment
-COPY . /  /opt/repo/script_1.py
+COPY . /  /opt/repo/
