@@ -9,10 +9,7 @@ pipeline {
         }
         stage('STAGE 2 - create Docker image') {
             steps {
-                def customImage = docker.build("test_image")
-				customImage.inside { 
-					sh 'echo "tests  done!"' 
-				}
+                docker.build("test_image")
             }
         }
     }
