@@ -20,7 +20,7 @@ node {
 	
 	stage('STAGE 4 - push image to DockerHub') {
 		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-			app.push()
+			app.push(latest)
 		}
 	}
 	
