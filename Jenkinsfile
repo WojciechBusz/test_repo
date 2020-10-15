@@ -13,7 +13,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		docker.image("wojciechbusz/test_image").inside {sh "pwd"}
+		docker.image("wojciechbusz/test_image").inside {sh "/opt/script_5.py"}
 	}
 	
 	
