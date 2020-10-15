@@ -13,9 +13,7 @@ node {
 	}
 	
 	
-	stage('STAGE 3 - run tests') {
-		app.inside {sh 'echo "Tests passed!"'}
-	}
+
 	
 	
 
