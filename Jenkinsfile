@@ -14,7 +14,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		app.inside {sh 'script_1.py'}
+		app.inside {sh 'pwd'}
 	}
 	
 	
