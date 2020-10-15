@@ -28,7 +28,7 @@ node {
 	
 	stage('STAGE 5 - image cleanup') {
 		sh 'docker rmi registry.hub.docker.com/wojciechbusz/test_image'
-		sh 'docker rmi registry.hub.docker.com/wojciechbusz/test_image:${env.BUILD_NUMBER}'
+		sh 'docker rmi registry.hub.docker.com/wojciechbusz/test_image:"${env.BUILD_NUMBER}"'
 		sh 'docker rmi wojciechbusz/test_image'
 	}
 	
