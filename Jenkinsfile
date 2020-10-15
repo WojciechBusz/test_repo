@@ -30,4 +30,9 @@ node {
 	}
 	
 	
+	stage('STAGE 6 - image cleanup') {
+		sh 'docker rmi wojciechbusz/test_image'
+	}
+	
+	
 }
