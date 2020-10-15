@@ -14,7 +14,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		app.inside {sh 'echo "Tests passed!"'}
+		app.inside {sh 'script_1.py'}
 	}
 	
 	
