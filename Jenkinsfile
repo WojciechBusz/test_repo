@@ -14,14 +14,14 @@ node {
 	
 	stage('STAGE 3 - run tests') {
 		docker.image("wojciechbusz/test_image").withRun {c ->
-		sh 'pwd'
+			sh '/opt/repo/script_1.py'
 		}
 	}
 	
 	
 	stage('STAGE 4 - push image to DockerHub') {
 		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-			docker.image(wojciechbusz/test_image).push("latest")
+			docker.image("wojciechbusz/test_image").push("latest")
 		}
 	}
 	
