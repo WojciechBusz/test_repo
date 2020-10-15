@@ -14,7 +14,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		app.withRun {
+		app.withRun {c ->
 		sh 'pwd'
 		}
 	}
