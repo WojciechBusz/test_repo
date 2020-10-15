@@ -25,4 +25,10 @@ node {
 	}
 	
 	
+	stage('STAGE 5 - image cleanup') {
+		sh 'docker rmi registry.hub.docker.com/wojciechbusz/test_image'
+		sh 'docker rmi docker rmi wojciechbusz/test_image'
+	}
+	
+	
 }
