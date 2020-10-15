@@ -14,7 +14,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		app.inside {sh 'pwd'}
+		app.withRun {sh 'pwd'}
 	}
 	
 	
@@ -22,12 +22,6 @@ node {
 		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
 			app.push("latest")
 		}
-	}
-	
-	
-	stage('STAGE 5 - image cleanup') {
-		sh 'docker rmi registry.hub.docker.com/wojciechbusz/test_image'
-		sh 'docker rmi wojciechbusz/test_image'
 	}
 	
 	
