@@ -1,4 +1,5 @@
 node {
+	def image
 	
 	
 	stage('STAGE 1 - clone Git repo') {
@@ -8,18 +9,19 @@ node {
 	
 	
 	stage('STAGE 2 - create Docker image') {
-		docker.build("wojciechbusz/test_image")
+		image = docker.build("wojciechbusz/test_image")
 	}
 	
 	
 	stage('STAGE 3 - run tests') {
-		docker.image("wojciechbusz/test_image").inside {sh "/opt/script_5.py"}
+		image.inside {sh "echo 'Running this command inside of a created container.'"}
 	}
 	
 	
 	stage('STAGE 4 - push image to DockerHub') {
 		docker.withRegistry('https://registry.hub.docker.com', 'DockerHub') {
-			docker.image("wojciechbusz/test_image").push("latest")
+			image.push("latest")
+			image.push("$(env.BUILD_NUMBER)")
 		}
 	}
 	
