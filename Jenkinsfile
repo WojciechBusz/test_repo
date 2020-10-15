@@ -13,7 +13,7 @@ node {
 	
 	
 	stage('STAGE 3 - run tests') {
-		docker.image(wojciechbusz/test_image).withRun {c ->
+		docker.image("wojciechbusz/test_image").withRun {c ->
 		sh 'pwd'
 		}
 	}
